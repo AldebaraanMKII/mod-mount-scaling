@@ -1,0 +1,70 @@
+#
+# mod-mount-scaling configuration
+#
+# Level-scaled mount speed: mounts get progressively faster as the player levels up
+# instead of the default fixed speed values.
+#
+
+# Enable or disable the module
+# Default: 1
+MountScaling.Enable = 1
+
+#
+# Ground mount scaling — Apprentice Riding
+#
+# Formula: max(MinSpeed, level * SpeedPerLevel), capped at MaxSpeed
+#
+
+# Speed increase per level (default: 2.5 → level 40 = 100%)
+MountScaling.Ground.SpeedPerLevel = 2.5
+
+# Minimum ground mount speed at level 1 (default: 20)
+MountScaling.Ground.MinSpeed = 20
+
+# Maximum ground mount speed cap (default: 100)
+MountScaling.Ground.MaxSpeed = 100
+
+#
+# Ground mount scaling — Journeyman Riding (learned at 40)
+#
+# Formula: MinSpeed + (level - 40) * SpeedPerLevel, clamped to [MinSpeed, MaxSpeed]
+#
+
+# Speed increase per level above 40 (default: 2.5 → level 60 = 150%)
+MountScaling.Ground.Journeyman.SpeedPerLevel = 2.5
+
+# Minimum Journeyman ground speed (default: 100)
+MountScaling.Ground.Journeyman.MinSpeed = 100
+
+# Maximum Journeyman ground speed (default: 150)
+MountScaling.Ground.Journeyman.MaxSpeed = 150
+
+#
+# Flying mount scaling — Expert Riding (learned at 60)
+#
+# Formula: MinSpeed + (level - 60) * SpeedPerLevel, clamped to [MinSpeed, MaxSpeed]
+#
+
+# Speed increase per level above 60 (default: 5)
+MountScaling.Flying.Expert.SpeedPerLevel = 5
+
+# Minimum Expert flying speed (default: 150)
+MountScaling.Flying.Expert.MinSpeed = 150
+
+# Maximum Expert flying speed (default: 200)
+MountScaling.Flying.Expert.MaxSpeed = 200
+
+#
+# Flying mount scaling — Artisan Riding (learned at 70)
+#
+# Formula: MinSpeed + (level - 70) * SpeedPerLevel, clamped to [MinSpeed, MaxSpeed]
+#
+
+# Speed increase per level above 70 (default: 8)
+MountScaling.Flying.Artisan.SpeedPerLevel = 8
+
+# Minimum Artisan flying speed (default: 200)
+MountScaling.Flying.Artisan.MinSpeed = 200
+
+# Maximum Artisan flying speed (default: 280)
+MountScaling.Flying.Artisan.MaxSpeed = 280
